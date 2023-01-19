@@ -3,6 +3,7 @@ import 'package:air_ticket_app/Utils/app_style.dart';
 import 'package:air_ticket_app/widget/thick_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TicketView extends StatelessWidget {
@@ -87,17 +88,30 @@ class TicketView extends StatelessWidget {
 
                       ThickContainer(),
                       Expanded(child: Container()),
-                      Text("London", style: Styles.headlineStyle3,),
+                      Text("LDN", style: Styles.headlineStyle3,),
                     ],
                   ),
+                  const Gap(3),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
                         width: 100,
-                        child: Text(""),
-                      )
+                        child: Text("New-York ",
+                          style: Styles.headlineStyle3,
+                        ),
+                      ),
+                      Text("8H 30M",style: Styles.headlineStyle3,),
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          "London",
+                          textAlign: TextAlign.end,
+                          style: Styles.headlineStyle3,
+                        ),
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             )
