@@ -1,3 +1,5 @@
+import 'package:air_ticket_app/Utils/app_info_list.dart';
+import 'package:air_ticket_app/screens/hotel_screen.dart';
 import 'package:air_ticket_app/screens/ticket_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Icon(Icons.search),
                     
-                    Text("Search")
+                    Text("Search for booking")
                   ],
                 )
                 ),
@@ -110,8 +112,64 @@ class HomeScreen extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.all(10),
-              child : TicketView()
+              child : SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList()
+                  // [
+                  //   TicketView(),
+                  //   Gap(10),
+                  //   TicketView(),
+                  //   Gap(10),
+                  //   TicketView(),
+                  // ],
+                ),
+              )
+          ),
+
+          Padding(padding: const EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+              children: [
+                Text("Our destination",
+                  style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold),
+                ),
+
+
+
+                InkWell(
+                  onTap: (){
+                    print("You are tapped");
+                  },
+                  child : Text("View all",
+                    style: TextStyle(fontSize: 16,color: Colors.pink.shade800,fontWeight: FontWeight.w500),
+                  ),)
+
+
+
+              ],
+            ),
+          ),
+
+          SingleChildScrollView(
+
+            padding: EdgeInsets.only(left: 20),
+            scrollDirection: Axis.horizontal,
+
+            child: Row(
+              children: hotelList.map((singlehotel) => HotelScreen(hotel: singlehotel)).toList()
+              // [
+              //   HotelScreen(),
+              //   HotelScreen(),
+              //   HotelScreen(),
+              //   HotelScreen()
+              // ],
+            ),
           )
+
+
         ]
 
       ),

@@ -1,4 +1,5 @@
 import 'package:air_ticket_app/screens/home_screen.dart';
+import 'package:air_ticket_app/screens/search_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,8 @@ class _BottomBarState extends State<BottomBar>{
 
   static final List<Widget> _widgetOptions =<Widget>[
 
-    HomeScreen(),
-    const Text("search"),
+    const HomeScreen(),
+    const SearchScreen(),
     const Text("ticket"),
     const Text("Profile"),
 
@@ -64,8 +65,8 @@ class _BottomBarState extends State<BottomBar>{
               label: "Home"
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
-            icon: Icon(FluentSystemIcons.ic_fluent_search_regular, size: 30,),label: "Search",),
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_airplane_filled),
+            icon: Icon(FluentSystemIcons.ic_fluent_airplane_filled, size: 30,),label: "Book",),
           BottomNavigationBarItem(activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
               icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular, size: 30,),label: "Ticket"),
           BottomNavigationBarItem(activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
