@@ -26,36 +26,36 @@ class SearchScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(20)),
           /////fitbox
-          Container(
-            padding: EdgeInsets.all(3.5),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                  width: size.width*.44,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(left:Radius.circular(AppLayout.getHeight(50))),
-                    color: Colors.white,
-                  ),
-                  child: Center(child: Text("Airline Ticket")),
-                ),
-
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                  width: size.width*.44-10,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(right:Radius.circular(AppLayout.getHeight(50))),
-                    color: Colors.grey.shade500,
-                  ),
-                  child: Center(child: Text("Hotel")),
-                )
-              ],
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppLayout.getHeight(40)),
-              color: Colors.white70
-            ),
-          ),
+          // Container(
+          //   padding: EdgeInsets.all(3.5),
+          //   child: Row(
+          //     children: [
+          //       Container(
+          //         padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+          //         width: size.width*.44,
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.horizontal(left:Radius.circular(AppLayout.getHeight(50))),
+          //           color: Colors.white,
+          //         ),
+          //         child: Center(child: Text("Airline Ticket")),
+          //       ),
+          //
+          //       Container(
+          //         padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+          //         width: size.width*.44-10,
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.horizontal(right:Radius.circular(AppLayout.getHeight(50))),
+          //           color: Colors.grey.shade500,
+          //         ),
+          //         child: Center(child: Text("Hotel")),
+          //       )
+          //     ],
+          //   ),
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(AppLayout.getHeight(40)),
+          //     color: Colors.white70
+          //   ),
+          // ),
           /////fitbox
 
 
