@@ -1,6 +1,7 @@
 import 'package:air_ticket_app/Utils/app_info_list.dart';
 import 'package:air_ticket_app/screens/hotel_screen.dart';
 import 'package:air_ticket_app/screens/ticket_view.dart';
+import 'package:air_ticket_app/widget/double_text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -79,28 +80,29 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 Gap(40),
+                DoubleTextWidget(bigText: "Upcoming Flight",smallText:"View all" ,),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Upcoming Flight",
-                    style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold),
-                    ),
-
-
-
-                    InkWell(
-                      onTap: (){
-                        print("You are tapped");
-                      },
-                      child : Text("View all",
-                      style: TextStyle(fontSize: 16,color: Colors.pink.shade800,fontWeight: FontWeight.w500),
-                    ),)
-
-
-
-                  ],
-                )
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Text("Upcoming Flight",
+                //     style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold),
+                //     ),
+                //
+                //
+                //
+                //     InkWell(
+                //       onTap: (){
+                //         print("You are tapped");
+                //       },
+                //       child : Text("View all",
+                //       style: TextStyle(fontSize: 16,color: Colors.pink.shade800,fontWeight: FontWeight.w500),
+                //     ),)
+                //
+                //
+                //
+                //   ],
+                // )
 
 
 
@@ -129,28 +131,30 @@ class HomeScreen extends StatelessWidget {
           ),
 
           Padding(padding: const EdgeInsets.all(15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: DoubleTextWidget(bigText: "Our destination",smallText: "View all",),
 
-              children: [
-                Text("Our destination",
-                  style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold),
-                ),
-
-
-
-                InkWell(
-                  onTap: (){
-                    print("You are tapped");
-                  },
-                  child : Text("View all",
-                    style: TextStyle(fontSize: 16,color: Colors.pink.shade800,fontWeight: FontWeight.w500),
-                  ),)
-
-
-
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //
+            //   children: [
+            //     Text("Our destination",
+            //       style: TextStyle(fontSize: 21,color: Color(0xFF3b3b3b),fontWeight: FontWeight.bold),
+            //     ),
+            //
+            //
+            //
+            //     InkWell(
+            //       onTap: (){
+            //         print("You are tapped");
+            //       },
+            //       child : Text("View all",
+            //         style: TextStyle(fontSize: 16,color: Colors.pink.shade800,fontWeight: FontWeight.w500),
+            //       ),)
+            //
+            //
+            //
+            //   ],
+            // ),
           ),
 
           SingleChildScrollView(
