@@ -118,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList()
+                  children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket,isColor: true,)).toList()
                   // [
                   //   TicketView(),
                   //   Gap(10),
