@@ -2,6 +2,7 @@ import 'package:air_ticket_app/Utils/app_info_list.dart';
 import 'package:air_ticket_app/Utils/app_layout.dart';
 import 'package:air_ticket_app/Utils/app_style.dart';
 import 'package:air_ticket_app/screens/ticket_view.dart';
+import 'package:air_ticket_app/widget/layout_builder_widget.dart';
 import 'package:air_ticket_app/widget/ticket_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,21 +33,28 @@ class TicketScreen extends StatelessWidget {
             child: TicketView(ticket: ticketList[0],isColor: false,),
           ),
 
+          SizedBox(height: 1,),
+
           Container(
            // width: size.width,
             margin: EdgeInsets.only(left: AppLayout.getWidth(15),right: AppLayout.getWidth(10)),
             decoration: BoxDecoration(
               color: Colors.white
             ),
-            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(15),),
+            padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20),vertical: AppLayout.getHeight(20)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppColumnLayout(
                       firstText: "Passenger Name",
                       SecondText: "Passenger",
+                    ),
+                    AppColumnLayout(
+                      firstText: "5221 365869",
+                      SecondText: "Passport/NID",
                     )
                     // Column(
                     //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +65,8 @@ class TicketScreen extends StatelessWidget {
                     //   ],
                     // )
                   ],
-                )
+                ),
+                const AppLayoutBuilder(Section: 15)
               ],
             ),
           )
