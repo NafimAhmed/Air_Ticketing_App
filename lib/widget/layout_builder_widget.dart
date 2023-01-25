@@ -5,8 +5,9 @@ class AppLayoutBuilder extends StatelessWidget {
 
   final bool? isColor;
   final int Section;
+  final double width;
 
-  const AppLayoutBuilder({Key? key, this.isColor, required this.Section}) : super(key: key);
+  const AppLayoutBuilder({Key? key, this.isColor, required this.Section, required this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

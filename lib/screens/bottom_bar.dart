@@ -1,4 +1,5 @@
 import 'package:air_ticket_app/screens/home_screen.dart';
+import 'package:air_ticket_app/screens/profile_screen.dart';
 import 'package:air_ticket_app/screens/search_screen.dart';
 import 'package:air_ticket_app/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -21,7 +22,8 @@ class _BottomBarState extends State<BottomBar>{
     const SearchScreen(),
     const TicketScreen(),
     //const Text("ticket"),
-    const Text("Profile"),
+    //const Text("Profile"),
+    const ProfileScreen(),
 
   ];
 
@@ -68,7 +70,7 @@ class _BottomBarState extends State<BottomBar>{
           ),
           BottomNavigationBarItem(
             activeIcon: Icon(FluentSystemIcons.ic_fluent_airplane_filled),
-            icon: Icon(FluentSystemIcons.ic_fluent_airplane_filled, size: 30,),label: "Book",),
+            icon: Icon(FluentSystemIcons.ic_fluent_airplane_regular, size: 30,),label: "Book",),
           BottomNavigationBarItem(activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
               icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular, size: 30,),label: "Ticket"),
           BottomNavigationBarItem(activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
