@@ -1,6 +1,8 @@
 import 'package:air_ticket_app/screens/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/login_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: BottomBar(),//MyHomePage(title: 'Flutter Demo Home Page'),
+      home: LogInScreen()//BottomBar(),//MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
