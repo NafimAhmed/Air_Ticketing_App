@@ -1,8 +1,10 @@
 
 import 'package:air_ticket_app/Utils/app_layout.dart';
 import 'package:air_ticket_app/Utils/app_style.dart';
+import 'package:air_ticket_app/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 
 import '../widget/column_layout.dart';
@@ -15,8 +17,27 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
+
         backgroundColor: Colors.pink.shade700,
-        title: Text("Profile",style: Styles.headlineStyle2.copyWith(color: Colors.white),),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+          Text("Profile",style: Styles.headlineStyle2.copyWith(color: Colors.white),),
+          InkWell(
+            onTap: (){
+              Navigator.pop(context);
+
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          LogInScreen()));
+
+            },
+            child: Icon(Icons.logout),
+          )
+
+        ],),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -47,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text("Pasenger's Name",style: Styles.headlineStyle2,),
+                        Text("Passenger's Name",style: Styles.headlineStyle2,),
                         Text("How are you ?",style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -74,7 +95,7 @@ class ProfileScreen extends StatelessWidget {
                                   backgroundColor: Colors.pink,
                                 ),
                                 Gap(5),
-                                Text("Premioum Status",
+                                Text("Premium Status",
                                   style: TextStyle(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w600
@@ -215,10 +236,10 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                   ListView.builder(
-
+                      physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
                       shrinkWrap: true,
-                      physics:  BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                      //physics:  BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                       itemCount: 5,
                       itemBuilder: (BuildContext context,int index){
                         return Container(

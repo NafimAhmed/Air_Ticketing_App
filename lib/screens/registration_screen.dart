@@ -1,20 +1,17 @@
-
 import 'package:air_ticket_app/Utils/app_layout.dart';
-import 'package:air_ticket_app/screens/bottom_bar.dart';
-import 'package:air_ticket_app/screens/registration_screen.dart';
+import 'package:air_ticket_app/Utils/app_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LogInScreen extends StatelessWidget {
-  //const LogInScreen({Key? key}) : super(key: key);
+class RegistrationScreen extends StatelessWidget {
+  //const RegistrationScreen({Key? key}) : super(key: key);
 
+  TextEditingController nameController=TextEditingController();
+  TextEditingController phoneNumberController=TextEditingController();
   TextEditingController emailController=TextEditingController();
   TextEditingController passwordController=TextEditingController();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -23,36 +20,15 @@ class LogInScreen extends StatelessWidget {
         child: Container(
           height: AppLayout.getScreenHeight(),
           width: AppLayout.getScreenWidth(),
-
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/window_view.jpg"),
+                image: AssetImage("assets/plane_window_view.jpeg"),
                 fit: BoxFit.cover),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
-
-              Text("Fly high    ",
-                style: GoogleFonts.playfairDisplay(
-                    fontSize: 60,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                ),
-                textAlign: TextAlign.start,
-              ),
-              Text("With Nagair",
-
-                style: GoogleFonts.playfairDisplay(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink
-                ),
-                textAlign: TextAlign.end,
-
-
-              ),
 
 
 
@@ -60,18 +36,55 @@ class LogInScreen extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
                 child:TextField(
                   maxLines: 1,
-                  controller: emailController,
+                  controller: nameController,
                   decoration: InputDecoration(
-                      labelText: "Email",
+
                       labelStyle: GoogleFonts.raleway(
 
                       ),
                       floatingLabelStyle: GoogleFonts.raleway(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.pink,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
 
                       ),
+                      labelText: "Name",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)
+                      ),
+                      filled: true,
+                      fillColor: Colors.white70,
+                      hintText: "Name",
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                              color: Colors.white,
+                              width: 1.0
+                          )
+                      )
+                  ),
+                ),
+              ),
+
+
+              Padding(
+                padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
+                child:TextField(
+                  maxLines: 1,
+                  controller: emailController,
+
+                  decoration: InputDecoration(
+
+                      labelStyle: GoogleFonts.raleway(
+
+                      ),
+                      floatingLabelStyle: GoogleFonts.raleway(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
+
+                      ),
+                      labelText: "Email",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)
                       ),
@@ -88,6 +101,35 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),),
 
+              Padding(
+                padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
+                child:TextField(
+                  maxLines: 1,
+                  controller: phoneNumberController,
+                  decoration: InputDecoration(
+                      floatingLabelStyle: GoogleFonts.raleway(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
+
+                      ),
+                      labelText: "Phone number",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)
+                      ),
+                      filled: true,
+                      fillColor: Colors.white70,
+                      hintText: "Phone Number",
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                              color: Colors.white,
+                              width: 1.0
+                          )
+                      )
+                  ),
+                ),
+              ),
 
 
               Padding(
@@ -123,21 +165,15 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),),
 
-              Gap(10),
-
 
               ElevatedButton(
                 onPressed: () {
 
-                  Navigator.pop(context);
-
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              BottomBar()));
-
-
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) =>
+                  //             BottomBar()));
 
 
                 },
@@ -148,65 +184,18 @@ class LogInScreen extends StatelessWidget {
                   shape: StadiumBorder(),
                 ),
                 child: Text(
-                  "Log in",
+                  "Register",
                   style: TextStyle(color: Colors.white, fontSize: 18,
                       fontWeight: FontWeight.bold
                   ),
                 ),
               ),
 
-              Gap(20),
-
-
-
-
-             InkWell(
-               onTap: (){
-
-               },
-               child:  Text("Forgot password ?",
-                 style: GoogleFonts.raleway(
-                     fontWeight: FontWeight.bold,
-                     fontSize: 20,
-                     color: Colors.pink
-                 ),
-               ),
-             ),
-
-
-              Gap(20),
-
-              InkWell(
-                onTap: (){
-
-
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              RegistrationScreen()));
-
-
-                },
-                child:  Text("No Account ? Click here to register",
-                  style: GoogleFonts.raleway(
-
-                      fontSize: 20,
-                      color: Colors.pink
-                  ),
-                ),
-              )
-
-
-
-
-
-
 
             ],
           ),
         ),
-      ),
+      )
     );
   }
 }

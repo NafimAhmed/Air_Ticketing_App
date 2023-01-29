@@ -2,6 +2,7 @@ import 'package:air_ticket_app/screens/home_screen.dart';
 import 'package:air_ticket_app/screens/profile_screen.dart';
 import 'package:air_ticket_app/screens/search_screen.dart';
 import 'package:air_ticket_app/screens/ticket_screen.dart';
+//import 'package:air_ticket_app/screens/ticket_screen_main.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class _BottomBarState extends State<BottomBar>{
 
     const HomeScreen(),
     const SearchScreen(),
-    const TicketScreen(),
+     TicketScreen(),
+    //const TicketScreenMain(),
     //const Text("ticket"),
     //const Text("Profile"),
     const ProfileScreen(),

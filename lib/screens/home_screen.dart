@@ -131,7 +131,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           Padding(padding: const EdgeInsets.all(15),
-            child: DoubleTextWidget(bigText: "Our destination",smallText: "View all",),
+            child: DoubleTextWidget(bigText: "Populer destination :",smallText: "View all",),
 
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -163,7 +163,7 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
 
             child: Row(
-              children: hotelList.map((singlehotel) => HotelScreen(hotel: singlehotel)).toList()
+              children: populerDestinationList.map((singlehotel) => HotelScreen(hotel: singlehotel,color: Colors.indigo,)).toList()
               // [
               //   HotelScreen(),
               //   HotelScreen(),
@@ -171,10 +171,63 @@ class HomeScreen extends StatelessWidget {
               //   HotelScreen()
               // ],
             ),
-          )
+          ),
+
+    Gap(21),
 
 
-        ]
+    Padding(padding: const EdgeInsets.all(15),
+    child: DoubleTextWidget(bigText: "International flight :",smallText: "View all",)),
+
+          SingleChildScrollView(
+
+            padding: EdgeInsets.only(left: 20),
+            scrollDirection: Axis.horizontal,
+
+            child: Row(
+                children: internationalFlightList.map((singlehotel) => HotelScreen(hotel: singlehotel,color: Colors.pink,)).toList()
+              // [
+              //   HotelScreen(),
+              //   HotelScreen(),
+              //   HotelScreen(),
+              //   HotelScreen()
+              // ],
+            ),
+          ),
+
+
+
+
+          Gap(21),
+          Padding(padding: const EdgeInsets.all(15),
+              child: DoubleTextWidget(bigText: "Additional Services :",smallText: "View all",)),
+
+          // Padding(padding: const EdgeInsets.all(15),
+          //     child: DoubleTextWidget(bigText: "International flight :",smallText: "View all",)),
+
+          SingleChildScrollView(
+
+            padding: EdgeInsets.only(left: 20),
+            scrollDirection: Axis.horizontal,
+
+            child: Row(
+                children: additionaServiceslList.map((singlehotel) => HotelScreen(hotel: singlehotel,color: Colors.grey,)).toList()
+              // [
+              //   HotelScreen(),
+              //   HotelScreen(),
+              //   HotelScreen(),
+              //   HotelScreen()
+              // ],
+            ),
+          ),
+
+          Gap(21)
+
+
+
+
+
+    ]
 
       ),
     );

@@ -9,7 +9,9 @@ class HotelScreen extends StatelessWidget {
 
   final Map<String ,dynamic> hotel;
 
-  const HotelScreen({Key? key, required this.hotel}) : super(key: key);
+  final Color color;
+
+  const HotelScreen({Key? key, required this.hotel, required this.color}) : super(key: key);
 
 
 
@@ -22,7 +24,7 @@ class HotelScreen extends StatelessWidget {
       height: AppLayout.getHeight(300),
       margin: EdgeInsets.only(right: 17,top: 5),
       decoration: BoxDecoration(
-        color: Colors.pink.shade700,
+        color: color,//Colors.pink.shade700,
             borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
