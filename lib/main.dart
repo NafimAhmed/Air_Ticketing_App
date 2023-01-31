@@ -1,5 +1,10 @@
+import 'package:air_ticket_app/Utils/app_layout.dart';
 import 'package:air_ticket_app/screens/bottom_bar.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:page_transition/page_transition.dart';
+
 
 import 'screens/login_screen.dart';
 
@@ -13,7 +18,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
 
@@ -29,7 +34,31 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LogInScreen()//BottomBar(),//MyHomePage(title: 'Flutter Demo Home Page'),
+      home: AnimatedSplashScreen(
+          duration: 3000,
+          splash: Scaffold(
+            body: Container(
+              
+              width: AppLayout.getScreenWidth(),
+              height: AppLayout.getScreenHeight(),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/aircraft_gif.gif",
+                    height: AppLayout.getScreenHeight(),
+                    width: AppLayout.getScreenWidth(),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          nextScreen: LogInScreen(),
+          splashTransition: SplashTransition.fadeTransition,
+          splashIconSize: double.maxFinite,
+          //pageTransitionType: PageTransitionType.scale,
+          backgroundColor: Colors.black)//LogInScreen()//BottomBar(),//MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

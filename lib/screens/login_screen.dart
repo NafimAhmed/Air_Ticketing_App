@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LogInScreen extends StatelessWidget {
@@ -131,11 +132,15 @@ class LogInScreen extends StatelessWidget {
 
                   Navigator.pop(context);
 
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              BottomBar()));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) =>
+                  //             BottomBar()));
+
+                  Get.to(BottomBar(),
+                      duration: Duration(milliseconds: 500), //duration of transitions, default 1 sec
+                      transition: Transition.rightToLeft );
 
 
 
@@ -180,11 +185,13 @@ class LogInScreen extends StatelessWidget {
                 onTap: (){
 
 
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              RegistrationScreen()));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) =>
+                  //             RegistrationScreen()));
+
+                  Get.to(RegistrationScreen());
 
 
                 },

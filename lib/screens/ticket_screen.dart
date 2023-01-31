@@ -1,9 +1,14 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:air_ticket_app/Utils/app_info_list.dart';
 import 'package:air_ticket_app/Utils/app_layout.dart';
 import 'package:air_ticket_app/Utils/app_style.dart';
 import 'package:air_ticket_app/screens/ticket_view.dart';
 import 'package:air_ticket_app/widget/layout_builder_widget.dart';
-import 'package:air_ticket_app/widget/ticket_tabs.dart';
+
+//import 'mobile.dart';
+//import 'package:air_ticket_app/widget/ticket_tabs.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +39,38 @@ class TicketScreen extends StatelessWidget  {
 
     final size=AppLayout.getSize(context);
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.pink.shade700,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Tickets", style: Styles.headlineStyle1.copyWith(color: Colors.white),),
+            
+            InkWell(
+              onTap: (){
+
+                // final pdf = pw.Document();
+                //
+                // pdf.addPage(pw.Page(
+                //     pageFormat: PdfPageFormat.a4,
+                //     build: (pw.Context context) {
+                //       return pw.Center(
+                //         child: pw.Text("Hello World"),
+                //       ); // Center
+                //     })); // Page
+
+
+
+
+
+
+              },
+              child: Icon(Icons.download),
+            )
+
+          ],
+        )
+      ),
       backgroundColor: Colors.grey.shade200,
       body: SingleChildScrollView(
         child: Container(
@@ -42,9 +79,9 @@ class TicketScreen extends StatelessWidget  {
                 // shrinkWrap: true,
                 // padding: EdgeInsets.symmetric(horizontal: AppLayout.getWidth(20),vertical: AppLayout.getHeight(20)),
                 children: [
-                  Gap(40),
-                  Text("Tickets", style: Styles.headlineStyle1,),
-                  Gap(20),
+                  // Gap(40),
+                  // Text("Tickets", style: Styles.headlineStyle1,),
+                  //Gap(20),
 
                   //////////////////////////////////////////////////////
 
@@ -301,4 +338,10 @@ class TicketScreen extends StatelessWidget  {
       ),
     );
   }
+
+
+
+
+
+
 }
