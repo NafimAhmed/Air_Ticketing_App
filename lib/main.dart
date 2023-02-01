@@ -1,9 +1,8 @@
 import 'package:air_ticket_app/Utils/app_layout.dart';
-import 'package:air_ticket_app/screens/bottom_bar.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:page_transition/page_transition.dart';
+
 
 
 import 'screens/login_screen.dart';
