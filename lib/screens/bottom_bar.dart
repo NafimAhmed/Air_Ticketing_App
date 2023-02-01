@@ -21,7 +21,7 @@ class BottomBar extends StatelessWidget{
   static final List<Widget> _widgetOptions =<Widget>[
 
     const HomeScreen(),
-    const SearchScreen(),
+     SearchScreen(),
      TicketScreen(),
     //const TicketScreenMain(),
     //const Text("ticket"),

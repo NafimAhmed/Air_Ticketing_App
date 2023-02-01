@@ -9,7 +9,12 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+
+  RxString dropdownValue="Select".obs;
+
+  SearchScreen({Key? key}) : super(key: key);
+
+
 
 
   @override
@@ -60,9 +65,18 @@ class SearchScreen extends StatelessWidget {
 
 
           Gap(AppLayout.getHeight(25)),
-          const IconTextWidget(icon: Icons.flight_takeoff_rounded,text: "Deparature"),
+           IconTextWidget(icon: Icons.flight_takeoff_rounded,text: "Deparature"),
+          //////////////////////////////////////////////////////////////////
+
+
+
+
+
+          ////////////////////////////////////////////////////////////
+
+
           Gap(AppLayout.getHeight(15)),
-          const IconTextWidget(icon: Icons.flight_land_rounded,text: "Arrival"),
+           IconTextWidget(icon: Icons.flight_land_rounded,text: "Arrival"),
 
           Gap(AppLayout.getHeight(25)),
 

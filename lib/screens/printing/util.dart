@@ -496,7 +496,7 @@ final PdfPageFormat pageFormat,
   final bytes= await build(pageFormat);
   final appDocDir=await getApplicationDocumentsDirectory();
   final appDocPath=appDocDir.path;
-  final file=File("$appDocPath/Document.pdf");
+  final file=File("$appDocPath/NagAir_Ticket.pdf");
   print("${file.path}");
   await file.writeAsBytes(bytes);
   await OpenFile.open(file.path);
